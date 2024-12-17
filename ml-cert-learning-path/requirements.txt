@@ -1,5 +1,6 @@
 tensorflow
 tensorflow-estimator
+tensorflow-probability
 keras
 matplotlib
 seaborn
@@ -13,3 +14,5 @@ google-cloud-aiplatform
 shapely
 pygeos
 geopandas
+gym
+tf-keras
