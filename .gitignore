@@ -3,7 +3,7 @@
 ## nextjs
 node_modules
 dist
-.vscode
+# .vscode
 npm-debug.log
 yarn-error.log
 .nyc_output
