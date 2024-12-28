@@ -1,0 +1,9 @@
+- What is the name of the prompt design approach in which you provide the model examples to establish a pattern, together with your prompt? Few-shot
+- Why do business analysts choose Generative AI technologies like Vertex AI Search?
+  - Improve time-to-value to search, navigate, and extract insights and understanding from large amounts of complex data
+- How does generative AI work?
+  - It uses a neural network to learn from a large dataset.
+- Vertex AI Agent Builder has the following features: Vertex AI Search, Recommendations and AI Agents
+- Vertex AI Agent Builder offers the same security capabilities as other Google Cloud products like BigQuery, including data encryption in flight and disk and no data sharing across customers
+- How does generative AI work?
+  - It uses a generic algorithm to evolve a population of models until it finds one that can generate the desired output.

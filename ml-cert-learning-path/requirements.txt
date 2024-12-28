@@ -16,3 +16,4 @@ pygeos
 geopandas
 gym
 tf-keras
+google-cloud-aiplatform
