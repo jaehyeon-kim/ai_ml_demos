@@ -61,3 +61,5 @@
   - [Data Beans](https://github.com/GoogleCloudPlatform/data-beans)
     - [Creating marketing campaigns using BigQuery and Gemini models](https://cloud.google.com/blog/products/data-analytics/create-a-marketing-campaign-with-this-bigquery-and-gemini-demo)
   - [Build an End-to-End Data and AI Platform with BigQuery and Generative AI](https://www.youtube.com/watch?v=7zmPRPhWSGA)
+  - [Advanced Solutions Lab](https://cloud.google.com/asl)
+    - [GitHub](https://github.com/GoogleCloudPlatform/asl-ml-immersion)
