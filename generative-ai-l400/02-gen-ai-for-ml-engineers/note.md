@@ -195,6 +195,8 @@ Vector search can provide additional real-time fact checks to LLMs.
 - [Embeddings](https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings)
   - [Text embeddings](https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings)
   - [Multimodal embeddings](https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings)
+  - [Tune text embeddings](https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune-embeddings)
+    - [Getting Tuned Text-Embeddings on Vertex AI](https://github.com/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/official/generative_ai/tuned_text-embeddings.ipynb)
 - [Vertex AI Embeddings for Text: Grounding LLMs made easy](https://cloud.google.com/blog/products/ai-machine-learning/how-to-use-grounding-for-your-llms-with-text-embeddings)
 - [Overview of Vertex AI Vector Search](https://cloud.google.com/vertex-ai/docs/vector-search/overview)
 - [Vector Search notebook tutorials](https://cloud.google.com/vertex-ai/docs/vector-search/notebooks)
