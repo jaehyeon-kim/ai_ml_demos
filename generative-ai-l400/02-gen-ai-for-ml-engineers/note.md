@@ -202,3 +202,15 @@ Vector search can provide additional real-time fact checks to LLMs.
 - [Vector Search notebook tutorials](https://cloud.google.com/vertex-ai/docs/vector-search/notebooks)
 - [GoogleCloudPlatform/generative-ai/embeddings](https://github.com/GoogleCloudPlatform/generative-ai/tree/main/embeddings)
 - [GoogleCloudPlatform/vertex-ai-samples/notebooks/official/vector_search](https://github.com/GoogleCloudPlatform/vertex-ai-samples/tree/main/notebooks/official/vector_search)
+
+#### Vector Search
+
+**Vertix AI**
+
+- [Overview of Vertex AI Vector Search](https://cloud.google.com/vertex-ai/docs/vector-search/overview)
+  - [Manage indexes](https://cloud.google.com/vertex-ai/docs/vector-search/create-manage-index)
+
+**BigQuery**
+
+- [BigQuery AI & ML](https://cloud.google.com/bigquery/docs/bqml-introduction)
+  - [Introduction to vector search](https://cloud.google.com/bigquery/docs/vector-search-intro)
