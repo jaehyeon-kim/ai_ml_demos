@@ -287,3 +287,138 @@ Response
   - Only talk about life as a pirate dog.
 - Add a rule to reduce hallucinations.
   - You are truthful and never lie. Never make up facts and if you are not 100% sure, reply with why you cannot answer in a truthful way.
+
+### Vertex AI Studio for Tuning, Distillation and Evaluation
+
+#### Evaluation models in Vertex AI
+
+**Enterprise Challenge: Assessing Model Output Quality**
+
+- Quality of output can sometimes be subjective
+- LLMs will return incorrect responses
+- LLMs do not always return the exact same results
+
+**Evaluation is not a solved problem**
+
+- Lack of data
+  - Customers who are using pretrained models generally do not have an adequate dataset to run evaluation.
+- Lack of metrics
+  - Many generative tasks do not have well-defined metrics.
+  - Enterprise customers have different criteria with respect to evaluating generated content.
+- Large decision space
+  - Model development transitions from model training to pretrained model selection, customization options, and in-context learning.
+  - Each option is expensive to explore.
+    - Select a model based on **performance** and **efficiency**.
+    - Choose the most **efficient** and **effective** tuning method and evaluate performance.
+    - Pick the best **performance** / **cost** tradeoff for your use case.
+    - Understand **trustworthiness**, i.e. safety, bias, and factuality.
+    - Apply different **Prompt Engineering** techniques.
+
+**Choosing Evaluation metrics**
+
+Deterministic tasks, such as classification and entity extraction, are easier to evaluate than text generating tasks, because a deterministic task generally assigns labels to things. You can easily check the value of the assigned label to determine whether the model was accurate or not. Compare that to a summarization task where there is no ground truth or a single 100% correct answer, but there are a lot of incorrect answers.
+
+- For Classification models, you have a much larger choice of evaluation metrics, such as: Accuracy, Precision, Recall, F1 score for binary classification, And, Macro-F1 or Micro-F1, for multi-class classification.
+- For text generation models, the evaluation metrics currently used are ROUGE-L and BLEU score.
+- For question answering, exact match is used for more deterministic use cases.
+
+However, as text generation and question answering are in their infancy, new approaches will evolve and develop over time.
+
+#### Evaluation metrics
+
+Accuracy
+
+- Correct prediction / Total number of examples
+- It doesn't work when datasets are skewed.
+
+Precision and recall (for classification)
+
+- Precision = TP / (TP + FP)
+  - What proportion of positive identifications was actually correct?
+- Recall = TP / (TP + FN)
+  - What proportion of actual positive was identified correctly?
+
+F1 Score
+
+- Harmonic mean of precision and recall
+
+**Summary**
+
+- Accuracy is a metric that can be used for Classification where there are balanced classes.
+- Precision can be used for classification where there are imbalanced classes, and one class dominates.
+  - However, you will want to minimize the false positives, for example a spam filter.
+- Recall can also be used for classification where there are imbalanced classes.
+  - But with Recall you want to minimize the false negatives, such as a test for a disease.
+- F1 Score is used for classification, and it works by combining precision and recall into a single metric.
+- ROUGE can be used for Text summarization and translation.
+- BLEU can be used for Text generation, summarization, and translation.
+- Exact Match can also be used for Text generation, along with Question Answering, and Classification, but only where the answer is unambiguous, with only one correct answer.
+
+#### Vertex AI LLM Evaluation Services
+
+A suite of tools with different approaches to evaluation Generative AI Models.
+
+Two evaluation paradigms
+
+- Pointwise evaluations: evaluate a single model on metrics you choose.
+- Pairwise evaluations: compare two models to select a preferred one.
+
+![](./images/llm-evaluation.png)
+
+### Function calling in Gemini
+
+Large language models have limitations:
+
+- Inconsistent output
+  - Even with good prompting, it's hard to get LLM's to produce consistently structured output for downstream implementation.
+- Frozen in time
+  - LLMs lack access to information after their training date, leading to stale, inaccurate responses.
+- Disconnected
+  - LLMs have no inherent way of interacting with the world. This limits their ability to take action on behalf of the user through interfaces like APIs.
+
+**Function calling** allows developers to address these challenges.
+
+- Developers define functions and arguments
+- LLM to prepare and parse the output
+- LLM itself does not call functions
+
+**Functional calling** provides a structured framework for consistent JSON responses as well as the ability to call external tools and APIs.
+
+**Function calling steps**
+
+- Define your functions
+- Wrap functions in a tool
+- Call Gemini with a tools argument
+- Output: function + parameters
+- Call the function
+- Pass the function outcome to the LLM
+
+**Benefits of function calling**
+
+- Full control in development
+- Less boilerplate code
+- Fast prototyping
+- No opinionated stack
+
+**Best practices with function calling**
+
+- Use a manageable number of functions
+  - 3 to 5 distinct function declarations provides the generative model a sensible range of functions to consider at runtime, without causing too much non-determinism due to a larger number of possibilities.
+- Improve accuracy when selecting functions
+  - Write clear and verbose function descriptions to help the model better understand the intent of the function to match user queries.
+- Improve accuracy in entity and parameter extraction
+  - Write clear and verbose parameter descriptions to help the model better predict the parameter value.
+- Specify types as much as possible
+  - Use strongly typed parameters from the OpenAPI schema when possible to reduce model inaccuracy.
+- Aim for determinism in function calling
+  - Use a temperature of zero, or a low value to instruct the model to generate more confident results and reduce hallucinations.
+- Provide few-shot examples to boost the performance by embedding examples in the function descriptions.
+
+### Resources
+
+Function Calling
+
+- [Demos for Function Calling in Gemini](https://youtu.be/gyOTxdULtIw?t=1345)
+- [Function Calling in Gemini](https://github.com/GoogleCloudPlatform/generative-ai/tree/main/gemini/function-calling)
+- [How to Interact with APIs Using Function Calling in Gemini](https://codelabs.developers.google.com/codelabs/gemini-function-calling#0)
+- [LangChain on Vertex AI](https://langchain-on-vertex-ai.web.app/)
